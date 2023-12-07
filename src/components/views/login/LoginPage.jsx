@@ -20,7 +20,7 @@ export default function LoginPage(){
         try {
             const result = await axios.post(`${API_URL}/api/users/login`, data, {withCredentials: true});
             console.log(result);
-            document.location.href = "/"
+            document.location.href = "/login"
         } catch (error) {
             console.error(error)
         }
