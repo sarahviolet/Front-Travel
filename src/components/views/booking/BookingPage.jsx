@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { AuthGuard } from "../../../auth/auth";
 import styles from "./Booking.module.css";
 import Button from "../../common/button/Button";
+import { API_URL } from "../../../config/config";
 
 export default function BookingPage(){
     AuthGuard();
@@ -12,13 +13,13 @@ export default function BookingPage(){
 
     const onClickSubmitBtn = async (data) => {
         console.log(data)
-        const result = await axios.post("http://localhost:4000/api/bookings", data);
+        const result = await axios.post(`${API_URL}/api/bookings`, data);
         console.log(result);
         fetchData();
     }
 
     const onClickDeleteBtn = (id) => async () => {
-        const result = await axios.delete(`http://localhost:4000/api/bookings/${id}`);
+        const result = await axios.delete(`${API_URL}/api/bookings/${id}`);
         fetchData();
     }
 
@@ -29,13 +30,13 @@ export default function BookingPage(){
         const updatedDate = watch(`updatedDate${id}`);
         console.log(updatedDate)
         dataToSend.departureDate = updatedDate;
-        const result = await axios.put(`http://localhost:4000/api/bookings/${id}`, dataToSend);
+        const result = await axios.put(`${API_URL}/api/bookings/${id}`, dataToSend);
         fetchData();
     }
 
     const fetchData = async () => {
 
-        const result = await axios.get("http://localhost:4000/api/bookings");
+        const result = await axios.get(`${API_URL}/api/bookings`);
         setData(result);
         
         console.log(result)

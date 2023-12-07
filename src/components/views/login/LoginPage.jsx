@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { LoginAuthGuard } from "../../../auth/auth";
 import styles from "./LoginPage.module.css";
 import Button from "../../common/button/Button";
+import {API_URL} from "../../../config/config";
 export default function LoginPage(){
 
     LoginAuthGuard();
@@ -16,7 +17,7 @@ export default function LoginPage(){
 
     const onClickSubmitBtn = async (data) => {
         console.log(data)
-        const result = await axios.post("http://localhost:4000/api/users/login", data, {withCredentials: true});
+        const result = await axios.post(`${API_URL}/api/users/login`, data, {withCredentials: true});
         console.log(result);
         document.location.href = "/"
     }

@@ -7,7 +7,7 @@ export default function Nav(){
     const [cookies, setCookie, removeCookie] = useCookies(['x_auth']);
     const onClickLogoutBtn = async (data) => {
         console.log(data)
-        const result = await axios.get("http://localhost:4000/api/users/logout", {withCredentials: true});
+        const result = await axios.get(`${API_URL}/api/users/logout`, {withCredentials: true});
         if(result) {
            
             setCookie("x_auth", null);

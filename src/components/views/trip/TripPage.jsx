@@ -5,41 +5,7 @@ import { AuthGuard } from "../../../auth/auth";
 import { useForm } from "react-hook-form";
 
 export default function TripPage(){
-    AuthGuard();
-
-    const {register, setValue, watch ,handleSubmit} = useForm();
-
-    const fetchData = async () => {
-
-        const result = await axios.get("http://localhost:4000/api/bookings");
-        setData(result);
-        
-        console.log(result)
-       
-        return result;
-    }
-
-    const [data, setData] = useState([]);
-
-    useEffect(()=>{
-        fetchData();
-    }, [])
-
-    const onClickDeleteBtn = (id) => async () => {
-        const result = await axios.delete(`http://localhost:4000/api/bookings/${id}`);
-        fetchData();
-    }
-
-    const onClickUpdateBtn = (id) => async () => {
-        if(watch(`updatedDate${id}`) == null || watch(`updatedDate${id}`) == undefined) return;
-        console.log("call")
-        const dataToSend = {};
-        const updatedDate = watch(`updatedDate${id}`);
-        console.log(updatedDate)
-        dataToSend.departureDate = updatedDate;
-        const result = await axios.put(`http://localhost:4000/api/bookings/${id}`, dataToSend);
-        fetchData();
-    }
+    
 
     return (
         <>
