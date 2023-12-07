@@ -13,7 +13,7 @@ export default function TripPage(){
             
             <div className={styles.card}>
                 <div className={styles.img}>
-                    <img src={`/images/montreal.jpeg`} />
+                    <img src={`/images/Montreal.jpeg`} />
                 </div>
                 <div className={styles.card_content}>
                     <div className={styles.title}>Weekend Gateway to Montreal</div>
@@ -24,7 +24,7 @@ export default function TripPage(){
             </div>
             <div className={styles.card}>
                 <div className={styles.img}>
-                    <img src={`/images/vancouver.jpeg`} />
+                    <img src={`/images/Vancouver.jpeg`} />
                 </div>
                 <div className={styles.card_content}>
                     <div className={styles.title}>Ocean View Resort in Vancouver</div>
@@ -36,7 +36,7 @@ export default function TripPage(){
             </div>
             <div className={styles.card}>
                 <div className={styles.img}>
-                    <img src={`/images/banff.jpeg`} />
+                    <img src={`/images/Banff.jpeg`} />
                 </div>
                 <div className={styles.card_content}>
                     <div className={styles.title}>Explore Banff National Park</div>
