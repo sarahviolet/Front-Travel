@@ -17,6 +17,8 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  margin-bottom: 60px;
 }
 
 header {
@@ -24,6 +26,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .logo1_wrapper {

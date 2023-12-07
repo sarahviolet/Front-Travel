@@ -1,6 +1,7 @@
 import axios from "axios";
 import { CheckLogin } from "../../../auth/auth";
 import { useCookies } from "react-cookie";
+import { API_URL } from "../../../config/config";
 
 export default function Nav(){
     const isLogin = CheckLogin();

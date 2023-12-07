@@ -17,9 +17,16 @@ export default function LoginPage(){
 
     const onClickSubmitBtn = async (data) => {
         console.log(data)
-        const result = await axios.post(`${API_URL}/api/users/login`, data, {withCredentials: true});
-        console.log(result);
-        document.location.href = "/"
+        try {
+            const result = await axios.post(`${API_URL}/api/users/login`, data, {withCredentials: true});
+            console.log(result);
+            // document.location.href = "/"
+        } catch (error) {
+            console.error(error)
+        }
+  
+        
+       
     }
     return (
         <>
